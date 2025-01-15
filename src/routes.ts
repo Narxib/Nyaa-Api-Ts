@@ -46,7 +46,6 @@ export class Handlers {
 
       const searchUrl = `${baseUrl}/?f=0&${category}&q=${queryParams.query}`;
       console.log(">>>>>>>>>>>>>>>>>>>>>", searchUrl)
-      res.send(200, `URL :  ${searchUrl}`)
       await Scrapers.scrapeNyaa(res, searchUrl);
     } catch (error) {
       res.send(404, `Not Found you are here`);
