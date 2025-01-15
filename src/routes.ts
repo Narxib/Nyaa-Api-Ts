@@ -15,6 +15,7 @@ export class Handlers {
       const id = req.params.id;
       const searchUrl = baseUrl + "/view/" + id;
       console.log(">>>>>>>>>>>>>>>>>>>>>", searchUrl)
+      res.send(200, `URL :  ${searchUrl}`)
       await Scrapers.fileInfoScraper(res, searchUrl);
     } catch (error) {
       res.send(404, "Not Found ID ROUTE");
@@ -28,7 +29,7 @@ export class Handlers {
 
       const searchUrl = `${baseUrl}/user/${username}?q=${queryParams.query.trim()}&p=${queryParams.page
         }&s=${queryParams.sort}&o=${queryParams.order}&f=${queryParams.filter}`;
-      console.log(">>>>>>>>>>>>>>>>>>>>>", searchUrl)
+      res.send(200, `URL :  ${searchUrl}`)
       await Scrapers.scrapeNyaa(res, searchUrl);
     } catch (error) {
       res.send(404, "this is mine");
@@ -46,9 +47,10 @@ export class Handlers {
       const searchUrl = `${baseUrl}?q=${queryParams.query.trim()}&c=${category}&p=${queryParams.page
         }&s=${queryParams.sort}&o=${queryParams.order}&f=${queryParams.filter}`;
       console.log(">>>>>>>>>>>>>>>>>>>>>", searchUrl)
+      res.send(200, `URL :  ${searchUrl}`)
       await Scrapers.scrapeNyaa(res, searchUrl);
     } catch (error) {
-      res.send(404, "Not Found you are here");
+      res.send(404, `Not Found you are here`);
     }
   };
 }
