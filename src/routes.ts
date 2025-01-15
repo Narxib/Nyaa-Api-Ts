@@ -7,7 +7,7 @@ const baseUrl = Constants.NyaaAltUrl;
 
 export class Handlers {
   static Ping: Handler = function (_, res) {
-    res.send(200, "Nyaa API v2 // Alive");
+    res.send(200, "Nyaa API v2 //  ALIIIIIIVE");
   };
 
   static GetInfoFromID: Handler = async function (req, res) {
