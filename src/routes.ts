@@ -14,10 +14,10 @@ export class Handlers {
     try {
       const id = req.params.id;
       const searchUrl = baseUrl + "/view/" + id;
-
+      console.log(">>>>>>>>>>>>>>>>>>>>>", searchUrl)
       await Scrapers.fileInfoScraper(res, searchUrl);
     } catch (error) {
-      res.send(404, "Not Found");
+      res.send(404, "Not Found ID ROUTE");
     }
   };
 
@@ -28,7 +28,7 @@ export class Handlers {
 
       const searchUrl = `${baseUrl}/user/${username}?q=${queryParams.query.trim()}&p=${queryParams.page
         }&s=${queryParams.sort}&o=${queryParams.order}&f=${queryParams.filter}`;
-
+      console.log(">>>>>>>>>>>>>>>>>>>>>", searchUrl)
       await Scrapers.scrapeNyaa(res, searchUrl);
     } catch (error) {
       res.send(404, "this is mine");
