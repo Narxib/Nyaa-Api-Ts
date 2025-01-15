@@ -7,7 +7,7 @@ const baseUrl = Constants.NyaaAltUrl;
 
 export class Handlers {
   static Ping: Handler = function (_, res) {
-    res.send(200, "Nyaa API v2 //  ALIIIIIIVE 222222");
+    res.send(200, "Nyaa API v2 //  ALIIIIIIVE");
   };
 
   static GetInfoFromID: Handler = async function (req, res) {
@@ -26,9 +26,8 @@ export class Handlers {
       const username = req.params.username;
       const queryParams = Utils.getSearchParameters(req);
 
-      const searchUrl = `${baseUrl}/user/${username}?q=${queryParams.query.trim()}&p=${
-        queryParams.page
-      }&s=${queryParams.sort}&o=${queryParams.order}&f=${queryParams.filter}`;
+      const searchUrl = `${baseUrl}/user/${username}?q=${queryParams.query.trim()}&p=${queryParams.page
+        }&s=${queryParams.sort}&o=${queryParams.order}&f=${queryParams.filter}`;
 
       await Scrapers.scrapeNyaa(res, searchUrl);
     } catch (error) {
@@ -44,9 +43,8 @@ export class Handlers {
       const category = Utils.getCategoryID(cat, subCat);
       const queryParams = Utils.getSearchParameters(req);
 
-      const searchUrl = `${baseUrl}?q=${queryParams.query.trim()}&c=${category}&p=${
-        queryParams.page
-      }&s=${queryParams.sort}&o=${queryParams.order}&f=${queryParams.filter}`;
+      const searchUrl = `${baseUrl}?q=${queryParams.query.trim()}&c=${category}&p=${queryParams.page
+        }&s=${queryParams.sort}&o=${queryParams.order}&f=${queryParams.filter}`;
       console.log(searchUrl)
       await Scrapers.scrapeNyaa(res, searchUrl);
     } catch (error) {
