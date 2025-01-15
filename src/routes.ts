@@ -32,7 +32,7 @@ export class Handlers {
 
       await Scrapers.scrapeNyaa(res, searchUrl);
     } catch (error) {
-      res.send(404, "Not Found");
+      res.send(404, "this is mine");
     }
   };
 
