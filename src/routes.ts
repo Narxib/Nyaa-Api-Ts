@@ -44,8 +44,7 @@ export class Handlers {
       const category = Utils.getCategoryID(cat, subCat);
       const queryParams = Utils.getSearchParameters(req);
 
-      const searchUrl = `${baseUrl}?q=${queryParams.query.trim()}&c=${category}&p=${queryParams.page
-        }&s=${queryParams.sort}&o=${queryParams.order}&f=${queryParams.filter}`;
+      const searchUrl = `${baseUrl}/f=0&${category}&q=${queryParams.query}`;
       console.log(">>>>>>>>>>>>>>>>>>>>>", searchUrl)
       res.send(200, `URL :  ${searchUrl}`)
       await Scrapers.scrapeNyaa(res, searchUrl);
