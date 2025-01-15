@@ -48,7 +48,7 @@ export class Handlers {
       console.log(">>>>>>>>>>>>>>>>>>>>>", searchUrl)
       await Scrapers.scrapeNyaa(res, searchUrl);
     } catch (error) {
-      res.send(404, "Not Found");
+      res.send(404, "Not Found you are here");
     }
   };
 }
