@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "Nyaa Web Scraper using Typescript",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "npx ts-node src/index.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^18.11.17",
     "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
     "typescript": "^4.9.4"
   },
   "dependencies": {

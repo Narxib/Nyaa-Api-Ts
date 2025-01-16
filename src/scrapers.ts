@@ -119,7 +119,7 @@ export async function scrapeNyaa(res: ServerResponse, url: string) {
 
       const torrent: Models.Torrent = {
         id: Number(torrentPath.split("/")[2]),
-        title: row.find("td:nth-child(2) a").last().text(),
+        title: row.find("td:nth-child(2) a").text(),
         link: Constants.NyaaBaseUrl + torrentPath,
         file: Constants.NyaaBaseUrl + filePath,
         category: row.find("td:nth-child(1) a").attr("title"),
